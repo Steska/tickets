@@ -8,11 +8,18 @@ class TicketsCounter
     /** @var string */
     private $end;
 
-
+    /** @var int  */
     const START = 1001;
 
+    /** @var int  */
     private $count = 0;
 
+    /**
+     * TicketsCounter constructor.
+     *
+     * @param $start
+     * @param $end
+     */
     public function __construct($start, $end)
     {
         $this->start = $start;
@@ -35,6 +42,9 @@ class TicketsCounter
         }
     }
 
+    /**
+     * @return int
+     */
     public function getCount()
     {
         return $this->count;
