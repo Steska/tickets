@@ -34,32 +34,34 @@ class Validator
      */
     public function validate()
     {
-        if (empty($this->start))
-        {
+        if (empty($this->start)) {
             $this->errors[] = 'Empty parameter start';
+
             return false;
         }
 
-        if (empty($this->end))
-        {
+        if (empty($this->end)) {
             $this->errors[] = 'Empty parameter end';
+
             return false;
         }
 
-        if (strlen($this->start) != 6){
+        if (strlen($this->start) != 6) {
             $this->errors[] = 'The length of start must be 6';
+
             return false;
         }
 
-        if (strlen($this->end) != 6){
+        if (strlen($this->end) != 6) {
             $this->errors[] = 'The length of end must be 6';
+
             return false;
         }
 
-        if ($this->start > $this->end)
-        {
-                $this->errors[] = 'Start must be biggest end';
-                return false;
+        if ($this->start > $this->end) {
+            $this->errors[] = 'Start must be biggest end';
+
+            return false;
         }
 
         return true;

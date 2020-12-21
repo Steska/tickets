@@ -1,10 +1,11 @@
 <?php
+
 header('Content-Type: application/json');
 require 'Validator.php';
 require 'TicketsCounter.php';
 
 $validator = new Validator($_GET['start'], $_GET['end']);
-if (!$validator->validate()){
+if (!$validator->validate()) {
     print_r($validator->getErrors());
     die();
 }
