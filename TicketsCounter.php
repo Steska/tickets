@@ -30,11 +30,12 @@ class TicketsCounter
 
     private function counter()
     {
+
         if ($this->start < self::START) {
             $this->start = self::START;
         }
-        for ($i = $this->start; $i < $this->end; $i++) {
-            $second = (int)$i % 1000;
+        for ($i = $this->start; $i <= $this->end; $i++) {
+            $second = $i % 1000;
             $first = $i / 1000;
             $first = $first % 9;
             $second = $second % 9;
